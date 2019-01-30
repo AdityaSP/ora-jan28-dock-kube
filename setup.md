@@ -37,6 +37,11 @@ Requires Virutalbox - If it is already installed then there is no need for a new
           https://storage.googleapis.com/kubernetes-release/release/v1.11.0/bin/windows/amd64/kubectl.exe
           5. put kubectl in the same location as minikube
           
+          For MacOS
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/darwin/amd64/kubectl
+          chmod +x ./kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+          
 ------------------------------------------------------------------          
 ### 6. minikube start
 From the command prompt on windows execute "minikube start"
