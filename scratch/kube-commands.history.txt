@@ -1,0 +1,135 @@
+507  kubectl create -f rc-helloworld.yml
+  508  kubectl version
+  509  kubectl get pods
+  510  kubectl get pods
+  511  kubectl delete pod helloworld-controller-jcxcs
+  512  kubectl get pods
+  513  kubectl get pods
+  514  kubectl get replicationcontrollers
+  515  kubectl get rc
+  516  kubectl get pods
+  517  kubectl get pods -o wide
+  518  kubectl scale rc helloworld-controller --replicas 10
+  519  kubectl get pods -o wide
+  520  kubectl get pods
+  521  kubectl scale rc helloworld-controller --replicas 1
+  522  kubectl get pods
+  523  kubectl get rc
+  524  #kubectl delete rc helloworld-controller
+  525  kubectl delete -f rc-helloworld.yml
+  526  kubectl create -f ../pod/pod-helloworld.yml
+  527  kubectl get pods
+  528  kubectl create -f rc-helloworld.yml
+  529  kubectl get pods
+  530  kubectl get pods --show-labels
+  531  kubectl delete -f rc-helloworld.yml
+  532  kubectl get pods
+  533  cd ..
+  534  cd dep/
+  535  ls
+  536  kubectl create -f dep-helloworld.yml
+  537  kubectl get pods
+  538  kubectl get pods --show-labels
+  539  kubectl describe deploy "helloworld-dep"
+  540  kubectl get pods
+  541  kubectl get rs
+  542  kubectl describe rs helloworld-dep-bf5b9bc9d
+  543  kubectl get pods
+  544  kubectl delete pod helloworld-dep-bf5b9bc9d-5kxq8
+  545  kubectl get pods
+  546  #kubectl scale rc helloworld-controller --replicas 1
+  547  kubectl scale deploy helloworld-dep --replicas 5
+  548  kubectl get pods
+  549  kubectl scale deploy helloworld-dep --replicas 10
+  550  kubectl rollout status deploy helloworld-dep
+  551  kubectl set image deploy "helloworld-dep" nginx=nginx
+  552  kubectl rollout status deploy helloworld-dep
+  553  kubectl get pods
+  554  kubectl get rs
+  555  kubectl rollout undo deploy "helloworld-dep"
+  556  kubectl rollout status deploy helloworld-dep
+  557  kubectl get rs
+  558  #kubectl set image deploy "helloworld-dep" nginx=nginx
+  559  kubectl get pods
+  560  ls
+  561  kubectl history deploy helloworld-dep
+  562  kubectl rollout history deploy helloworld-dep
+  563  kubectl delete -f dep-helloworld.yml
+  564  kubectl create -f dep-helloworld.yml --record
+  565  kubectl rollout history deploy "helloworld-dep"
+  566  kubectl set image deploy "helloworld-dep" web=nginx
+  567  kubectl rollout history deploy "helloworld-dep"
+  568  kubectl set image deploy "helloworld-dep" web=alap-jan28 --record=true
+  569  kubectl rollout history deploy "helloworld-dep"
+  570  kubectl rollout undo deploy "helloworld-dep" --to-revision 1
+  571  kubectl rollout history deploy "helloworld-dep"
+  572  kubectl get rs
+  573  kubectl delete deploy dep-helloworld.yml
+  574  kubectl delete -f dep-helloworld.yml
+  575  kubectl get nodes
+  576  kubectl get nodes --show-labels
+  577  kubectl create -f dep-helloworld.yml
+  578  kubectl get deploy
+  579  kubectl get rs
+  580  kubectl get pods
+  581  kubectl describe pod helloworld-dep-675d89d5b8-6rfv4
+  582  kubectl get nodes --show-labels
+  583  kubectl label node minikube boxtype=heavyspec
+  584  kubectl get nodes --show-labels
+  585  kubectl get pods
+  586  kubectl get pods
+  587  kubectl get pods -o wide
+  588  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -- ping 172.17.0.17
+  589  kubectl exec helloworld-dep-675d89d5b8-6rfv4 nginx-- ping 172.17.0.17
+  590  kubectl exec helloworld-dep-675d89d5b8-6rfv4 --name nginx-- ping 172.17.0.17
+  591  kubectl exec helloworld-dep-675d89d5b8-6rfv4 --name nginx -- ping 172.17.0.17
+  592  kubectl exec --help
+  593  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -c nginx -- ping 172.17.0.17
+  594  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -c web -- ping 172.17.0.17
+  595  kubectl logs helloworld-dep-675d89d5b8-6rfv4
+  596  kubectl get pods -o wide
+  597  ping 172.17.0.17
+  598  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -- ping 172.17.0.17
+  599  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -c web -- ping 172.17.0.17
+  600  kubectl logs helloworld-dep-675d89d5b8-6rfv4
+  601  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -- curl 172.17.0.17
+  602  kubectl exec helloworld-dep-675d89d5b8-6rfv4 -- wget 172.17.0.17
+  603  kubectl logs helloworld-dep-675d89d5b8-6rfv4
+  604  kubectl logs helloworld-dep-675d89d5b8-x2lb8
+  605  kubectl get pods -o wide
+  606  kubectl get pods
+  607  kubectl get pods -o wide
+  608  kubectl get all
+  609  kubectl get pods
+  610  cd ..
+  611  ls
+  612  cd service/
+  613  ls
+  614  ls
+  615  vi svc-helloworld.yml
+  616  kubectl create -f svc-helloworld.yml
+  617  kubectl get service
+  618  kubectl get svc
+  619  kubectl scale deployment helloworld-dep --replicas 1
+  620  kubectl describe svc hw-svc
+  621  kubectl get pods
+  622  kubectl get pods -o wide
+  623  kubectl delete pod helloworld-dep-675d89d5b8-x2lb8
+  624  kubectl get pods -o wide
+  625  kubectl describe svc hw-svc
+  626  kubectl get pods -o wide --show-labels
+  627  kubectl scale deployment helloworld-dep --replicas 0
+  628  kubectl describe svc hw-svc
+  629  kubectl scale deployment helloworld-dep --replicas 2
+  630  kubectl describe svc hw-svc
+  631  kubectl delete -f svc-helloworld.yml
+  632  kubectl create -f svc-helloworld.yml
+  633  kubectl get svc
+  634  kubectl create -f svc-helloworld.yml
+  635  kubectl create -f svc-helloworld.yml
+  636  kubectl get svc
+  637  kubectl describe svc hw-svc
+  638  curl 192.168.99.100:31001
+  639  kubectl get svc
+  640  kubectl describe svc hw-svc
+  641  history
