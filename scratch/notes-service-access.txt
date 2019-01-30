@@ -1,0 +1,33 @@
+λ kubectl describe svc hw-svc
+Name:                     hw-svc
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=helloworld
+Type:                     NodePort
+IP:                       10.106.246.241
+Port:                     <unset>  8888/TCP
+TargetPort:               nginxport/TCP
+NodePort:                 <unset>  31001/TCP
+Endpoints:                172.17.0.17:80,172.17.0.18:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+λ kubectl get pods -o wide
+NAME                              READY     STATUS    RESTARTS   AGE       IP            NODE
+helloworld-dep-675d89d5b8-cwxnp   1/1       Running   0          53m       172.17.0.17   minikube
+helloworld-dep-675d89d5b8-tz7br   1/1       Running   0          53m       172.17.0.18   minikube
+
+
+# Different ways to access
+
+FROM VM/Node
+curl hw-svc:8888  # VM's DNS did not know hw-svc
+
+curl 172.17.0.17:80
+curl 10.106.246.241:8888
+curl localhost:31001
+
+FROM outside of the VM/Node
+http://192.168.99.100:31001
+
